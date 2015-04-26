@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('rainforest')
+        .module('upload')
         .filter('inArray', function() {
             return function inArray(haystack, category, needle) {
                 var result = [];
@@ -37,7 +37,7 @@
 //     'use strict';
 
 //     angular
-//         .module('rainforest')
+//         .module('upload')
 //         .filter('inArray', function() {
 //             return function inArray(haystack, category, needle) {
 //                 var result = [];

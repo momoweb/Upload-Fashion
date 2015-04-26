@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('rainforest')
+        .module('upload')
         .factory('DataService', DataService);
 
     DataService.$inject = ['inArrayFilter', 'filterFilter', 'orderByFilter', 'rangeFilter', '$http', '$q', 'sortOrders', '$rootScope', '$timeout', 'dataEvents'];

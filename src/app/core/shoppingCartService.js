@@ -2,7 +2,7 @@
         'use strict';
 
         angular
-            .module('rainforest')
+            .module('upload')
             .factory('ShoppingCart', ShoppingCart);
 
         ShoppingCart.$inject = ['$cookies', '$rootScope', 'cartEvents'];

@@ -2,7 +2,7 @@
 //     'use strict';
 
 //     angular
-//         .module('rainforest')
+//         .module('upload')
 //         .factory('SearchFilters', SearchFilters);
 
 //     SearchFilters.$inject = [];

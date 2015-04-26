@@ -9,7 +9,7 @@
       return this.image_sm_url.replace(/sm/g, 'lg');
     },
     stockDate: '{{date(new Date(2014, 0, 1), new Date(), "YYYYMMdd")}}',
-    catergory: function() {
+    category: function() {
       var catArray = ["ZavaSkrip", "Zava", "Sweaf", "C.P.P", "Sequel", "Gem", "Snake", "Subjective", "Pearl", "Move", "HpH", "by"];
     var regexp = new RegExp( catArray.join( '|' ), 'g' );
       var result = (this.name).replace(regexp, '').trim();

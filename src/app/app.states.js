@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('rainforest')
+    angular.module('upload')
         .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', configRoutes])
         .run(['$state', function($state) {
             // include $state to kickstart the router
@@ -77,7 +77,7 @@
 // (function() {
 //     'use strict';
 
-//     angular.module('rainforest')
+//     angular.module('upload')
 //         .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', configRoutes])
 //         .run(['$state', function($state) {
 //             // include $state to kickstart the router

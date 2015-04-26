@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('rainforest')
+        .module('upload')
         .controller('DetailController', DetailController);
 
     DetailController.$inject = ['item', 'ShoppingCart'];

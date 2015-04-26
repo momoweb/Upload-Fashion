@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('rainforest', [
+    angular.module('upload', [
         'ui.router',
         'ui.bootstrap',
         'ui.slider',

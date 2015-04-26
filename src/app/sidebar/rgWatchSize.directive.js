@@ -3,7 +3,7 @@ set isCollapse based on changes in screen size
  */
 (function() {
     'use strict';
-    angular.module('rainforest')
+    angular.module('upload')
         .directive('rgWatchResize', rgWatchResize);
 
     rgWatchResize.$inject = ['$window'];

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('rainforest')
+        .module('upload')
         .controller('SidebarController', SidebarController);
 
     SidebarController.$inject = ['searchFilters', '$location', 'data', '$scope', 'UrlQueryService', 'sortOrders', 'DataService', '$window'];

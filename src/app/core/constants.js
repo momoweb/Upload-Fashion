@@ -33,7 +33,7 @@
     };
 
     angular
-        .module('rainforest')
+        .module('upload')
         .constant('searchFilters', searchFilters)
         .constant('sortOrders', sortOrders)
         .constant('cartEvents', cartEvents)

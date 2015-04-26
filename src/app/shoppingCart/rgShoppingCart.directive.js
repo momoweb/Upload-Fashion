@@ -1,6 +1,6 @@
 (function() {
     'use strict';
-    angular.module('rainforest')
+    angular.module('upload')
         .directive('rgShoppingCart', rgShoppingCart);
 
     // rgShoppingCart.$inject = [];

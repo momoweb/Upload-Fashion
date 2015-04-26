@@ -1,6 +1,6 @@
     (function() {
         'use strict';
-        angular.module('rainforest')
+        angular.module('upload')
             .controller('ShoppingCartController', ShoppingCartController);
 
         ShoppingCartController.$inject = ['$scope', 'ShoppingCart', '$modalInstance', '$state', 'cartEvents'];

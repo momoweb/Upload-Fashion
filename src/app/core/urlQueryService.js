@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('rainforest')
+        .module('upload')
         .factory('UrlQueryService', UrlQueryService);
 
     UrlQueryService.$inject = ['$location'];

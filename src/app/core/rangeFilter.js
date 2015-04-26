@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('rainforest')
+        .module('upload')
         .filter('range', function() {
             return function(items, min, max) {
                 var filtered = [];

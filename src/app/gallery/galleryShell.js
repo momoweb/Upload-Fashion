@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('rainforest')
+        .module('upload')
         .controller('GalleryShellController', GalleryShellController);
 
     GalleryShellController.$inject = ['$anchorScroll', '$location', 'DataService', '$scope', 'dataEvents'];
@@ -31,7 +31,7 @@
 //     'use strict';
 
 //     angular
-//         .module('rainforest')
+//         .module('upload')
 //         .controller('GalleryShellController', GalleryShellController);
 
 //     GalleryShellController.$inject = ['$anchorScroll', '$location', 'sortOrders', 'DataService', '$scope', 'dataEvents'];
