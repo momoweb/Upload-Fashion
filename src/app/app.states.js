@@ -24,7 +24,7 @@
                 },
                 views: {
                     "main": {
-                        templateUrl: 'app/gallery/galleryShell.html',
+                        templateUrl: 'app/shell/galleryShell.html',
                         controller: 'GalleryShellController',
                         controllerAs: 'vm'
                     },
