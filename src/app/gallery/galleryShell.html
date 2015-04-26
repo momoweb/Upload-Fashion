@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row navbar-sm">
+            <span>{{vm.pageTotal}} pages with {{vm.itemTotal}} products found</span>
+           <rg-shopping-cart></rg-shopping-cart>
+    </div>
+    <div class="row">
+        <div class="col-md-3" ui-view="sidebar"></div>
+        <div class="col-md-9" ui-view="gallery"></div>
+    </div>
+</div>

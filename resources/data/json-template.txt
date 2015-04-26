@@ -1,0 +1,50 @@
+[
+  '{{repeat(517)}}',
+  {
+    name: '{{random("Backless Dress", "Jeans", "Sweater", "Jumper", "Swim Suit", "Sailor Dress", "Tea Gown", "Scarf", "Legging", "Jacket", "T-Shirt")}} by {{random("ZavaSkrip", "Zava", "Sweaf", "C.P.P", "Sequel", "Gem", "Snake", "Subjective", "Pearl", "Move", "HpH")}}',
+    uid: '{{objectId()}}',
+    price: '{{floating(30, 300, 1, "£0,0.00")}}',
+    image_sm_url: 'sm_image_{{integer(1, 17)}}.jpg',
+    image_lg_url: function() {
+      return this.image_sm_url.replace(/sm/g, 'lg');
+    },
+    stockDate: '{{date(new Date(2014, 0, 1), new Date(), "YYYYMMdd")}}',
+    catergory: function() {
+      var catArray = ["ZavaSkrip", "Zava", "Sweaf", "C.P.P", "Sequel", "Gem", "Snake", "Subjective", "Pearl", "Move", "HpH", "by"];
+    var regexp = new RegExp( catArray.join( '|' ), 'g' );
+      var result = (this.name).replace(regexp, '').trim();
+      result = result.replace(/ /g, '_');
+      result = result.toLowerCase();
+      return result;
+    },
+    
+    description: '{{lorem(1, "paragraphs")}}',
+    sizes: function() {
+      var array = [];
+      for (var i = 0; i < 8; i++) {
+        var str = 'UK' + (i + 1);
+        if (Math.round(Math.random()) === 1) {
+          array.push(str);
+        }
+      }
+      if (array.length < 1) {
+        array = ["UK1","UK2","UK3","UK4","UK5","UK6", "UK7", "UK8"];
+      }
+      return array;
+    },
+    
+     colors: function() {
+      var colorArray = ["blue", "red", "black", "pink", "yellow", "magenta", "green", "purple"];
+      var array = [];
+      for (var i = 0; i < 8; i++) {
+        if (Math.round(Math.random()) === 1) {
+          array.push(colorArray[i]);
+        }
+      }
+      if (array.length < 1) {
+        array = ["blue", "red", "black", "pink", "yellow", "magenta", "green", "purple"];
+      }
+      return array;
+    }
+  }
+]

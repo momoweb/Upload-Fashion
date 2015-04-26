@@ -1,0 +1,29 @@
+<div id="shopping-cart-modal">
+    <h4>Shopping Cart</h4>
+    <table class="table">
+        <tr>
+            <th>Item Description</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        <tr ng-repeat="item in vm.cartContents">
+            <td>
+                <p ng-click="vm.detailView(item)">{{item.name}}</p> 
+            </td>
+            <td>{{item.qty}}</td>
+            <td>
+                {{item.price * item.qty | currency:"£"}}
+                <br>
+                ({{item.price | currency:"£"}} each)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Total Cost:</td>
+            <td>{{vm.total() | currency:"£"}}</td>
+        </tr>
+    </table>
+    <div id="paynow-btn">
+        <button class="btn btn-success" ng-click="vm.checkout()">Pay Now</button>
+    </div>
+</div>

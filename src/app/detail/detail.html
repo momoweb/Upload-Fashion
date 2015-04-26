@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row navbar-sm">
+        <a href="" id="detail-back-btn" onclick="window.history.back()"><i class="glyphicon glyphicon-arrow-left"></i> Back</a>
+        <rg-shopping-cart></rg-shopping-cart>
+    </div>
+    <div class="row" id="item-detail">
+        <div class="text-center">
+            <img class="col-md-4 img-thumbnail" ng-src="images/lg/{{vm.item.image_lg_url}}" alt={{vm.item.name}}>
+        </div>
+        <div class="col-md-8" id="item-info">
+            <h5>{{vm.item.name}}</h5>
+            <h4>{{vm.item.price | currency:"£"}}</h4>
+            <p>{{vm.item.description}}</p>
+            <button class="btn btn-success btn-sm" ng-click="vm.addItem()">Add To Bag</button>
+        </div>
+    </div>
+</div>

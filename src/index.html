@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="rainforest">
+
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8">
+    <base href="/">
+    <!-- vendor css -->
+    <link rel="stylesheet" type="text/css" href="jquery-ui/themes/smoothness/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/ui-slider.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <title>Rainforest Fashion</title>
+</head>
+
+<body>
+    <header class="container">
+        <a href="#/1"><img src="logo/logo.png" alt="upload fashion" id="logo-main"></a>
+        <p>
+            <em>- built with Angularjs and Bootstrap-sass</em>
+        </p>
+    </header>
+    <article ui-view="main"></article>
+    <footer class="text-center">
+        Photo attribution: <a href="https://www.flickr.com/photos/lit_foto/sets/72157626572664692">Pete Lytwyniuk / Studiolit</a>
+    </footer>
+    <!-- Vendor scripts -->
+    <script src="jquery/dist/jquery.min.js"></script>
+    <script src="jquery-ui/jquery-ui.min.js"></script>
+    <script src="angular/angular.js"></script>
+    <script src="angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="angular-cookies/angular-cookies.js"></script>
+    <!-- 3rd party scripts -->
+    <script src="libs/ui-slider.js"></script>
+    <!-- app scripts -->
+    <script src="app/app.js"></script>
+    <script src="app/app.states.js"></script>
+    <script src="app/core/dataservice.js"></script>
+    <script src="app/core/constants.js"></script>
+    <script src="app/core/urlQueryService.js"></script>
+    <script src="app/core/rangeFilter.js"></script>
+    <script src="app/core/shoppingCartService.js"></script>
+    <script src="app/core/inArrayFilter.js"></script>
+    <script src="app/gallery/gallery.js"></script>
+    <script src="app/sidebar/rgWatchSize.directive.js"></script>
+    <script src="app/sidebar/sidebar.js"></script>
+    <script src="app/gallery/galleryShell.js"></script>
+    <script src="app/shoppingCart/shoppingCart.js"></script>
+    <script src="app/shoppingCart/rgShoppingCart.directive.js"></script>
+    <script src="app/detail/detail.js"></script>
+    <script src="app/gallery/rgGalleryItem.directive.js"></script>
+    <script type="text/javascript">
+    document.write('<script src="' + (location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':35729/livereload.js?snipver=1" type="text/javascript"><\/script>')
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<div id="refine-btn" class="hidden-md hidden-lg text-center row" ng-click="vm.isCollapsed = !vm.isCollapsed">
+        <div>Refine Results <i class="glyphicon"ng-class="{'glyphicon-chevron-up': !vm.isCollapsed, 'glyphicon-chevron-down': vm.isCollapsed}"></i></div>
+</div>
+<div id="content-sidebar" rg-watch-resize>
+    <div collapse="vm.isCollapsed">
+        <div id="sortSelection">
+            <h5>Sort:</h5>
+            <select id="sort-selection" class="form-control" ng-init="vm.newSortValue = vm.currentSortValue" ng-model="vm.newSortValue" ng-change="vm.reSort()" ng-options="so.value as so.text for so in vm.sortOrders"></select>
+        </div>
+        <h5>Filter:</h5>
+        <accordion close-others="true">
+            <accordion-group ng-repeat="filter in vm.filters" class="list-unstyled" is-open="filter.open">
+                <accordion-heading>
+                    <div>
+                        {{filter.category}}
+                        <i class="glyphicon" ng-class="{'glyphicon-menu-up': filter.open, 'glyphicon-menu-down': !filter.open}"></i>
+                    </div>
+                </accordion-heading>
+                <ul>
+                    <li class="list-unstyled" ng-repeat="option in filter.options | orderBy: 'toString()'">
+                        <input id="filter-{{filter.category}}-{{option}}" type="checkbox" ng-model="vm.checkedItems[option]" ng-click='vm.clicked(filter.category, option)'>
+                        <label for="filter-{{filter.category}}-{{option}}"><span></span>{{vm.formatText(option)}}</label>
+                    </li>
+                </ul>
+            </accordion-group>
+        </accordion>
+        <h5>Price Range: <span class="current-price-range">£{{vm.priceRange.minMax[0]}} - £{{vm.priceRange.minMax[1]}}</span></h5>
+        <div class="hidden-xs hidden-sm">
+            <div ui-slider="vm.priceRange.options" min="0" max="300" step="{{vm.priceRange.step}}" use-decimals ng-model="vm.priceRange.minMax"></div>
+        </div>
+        <form name="vm.priceRangeForm" class="hidden-md hidden-lg row">
+            <label for="minPrice">min: £</label>
+            <input name="min" type="number" min="0" max="290" id="minPrice" ng-model="vm.priceRange.minMax[0]">
+            <label for="maxPrice">max: £</label>
+            <input name="max" type="number" min="10" max="300" id="maxPrice" ng-model="vm.priceRange.minMax[1]">
+            <button class="btn btn-info btn-xs" ng-click="vm.setPriceRange()">SUBMIT</button>
+        </form>
+        <hr class="hidden-md hidden-lg">
+    </div>
+</div>

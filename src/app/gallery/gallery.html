@@ -1,0 +1,12 @@
+<div id="content-gallery">
+    <div class="row">
+        <ul class="list-group">
+            <li class="col-md-4 col-sm-6 list-unstyled" ng-repeat="item in vm.items">
+                <rg-gallery-item item="item"></rg-gallery-item>
+            </li>
+        </ul>
+    </div>
+    <div class="row text-center">
+        <pagination class="pagination-sm" total-items="vm.itemTotal" ng-model="vm.currentPage" ng-change="vm.pageChanged()" rotate="true" previous-text="Prev" items-per-page="vm.itemsPerPage" max-size="vm.maxSize"></pagination>
+    </div>
+</div>
