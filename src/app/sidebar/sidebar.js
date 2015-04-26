@@ -1,13 +1,10 @@
 (function() {
     'use strict';
-
     angular
         .module('upload')
         .controller('SidebarController', SidebarController);
 
-    SidebarController.$inject = ['searchFilters', '$location', 'data', '$scope', 'UrlQueryService', 'sortOrders', 'DataService', '$window'];
-
-    function SidebarController(searchFilters, $location, data, $scope, UrlQueryService, sortOrders, DataService, $window) {
+    function SidebarController(searchFilters, $location, $scope, UrlQueryService, sortOrders, dataservice, $window) {
         /*jshint validthis: true */
         var vm = this;
         var _priceRangeMin = 0;
@@ -52,7 +49,7 @@
         }
 
         function initSortSelection() {
-            vm.currentSortValue = sortOrders[DataService.getCurrentSortOrder()].value;
+            vm.currentSortValue = sortOrders[dataservice.getCurrentSortOrder()].value;
         }
 
         function initPriceRange() {
@@ -135,8 +132,6 @@
                 return false;
             }
             if (vm.priceRangeForm.$valid) {
-                // min = (Math.round(min / 10) * 10);
-                // max = (Math.round(max / 10) * 10);
                 UrlQueryService.addPriceFilter(min, max);
             }
         }

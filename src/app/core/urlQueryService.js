@@ -1,11 +1,8 @@
 (function() {
     'use strict';
-
     angular
         .module('upload')
         .factory('UrlQueryService', UrlQueryService);
-
-    UrlQueryService.$inject = ['$location'];
 
     /* @ngInject */
     function UrlQueryService($location) {

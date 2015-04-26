@@ -1,17 +1,15 @@
 /*
-set isCollapse based on changes in screen size
+ * sets isCollapse value on resize events
  */
 (function() {
     'use strict';
     angular.module('upload')
         .directive('rgWatchResize', rgWatchResize);
 
-    rgWatchResize.$inject = ['$window'];
-
     function rgWatchResize($window) {
         return {
             restrict: 'A',
-            link: function(scope, elem, attr) {
+            link: function(scope) {
                 angular.element($window).on('resize', function() {
                     scope.$apply(function() {
                         //if window width is >= desktop

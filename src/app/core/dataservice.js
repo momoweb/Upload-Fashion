@@ -1,63 +1,96 @@
-/* some of these data operations should be handle by the backend */
-(function() {
+(function () {
     'use strict';
-
     angular
         .module('upload')
-        .factory('DataService', DataService);
-
-    DataService.$inject = ['inArrayFilter', 'filterFilter', 'orderByFilter', 'rangeFilter', '$http', '$q', 'sortOrders', '$rootScope', '$timeout', 'dataEvents'];
+        .factory('dataservice', dataservice);
 
     /* @ngInject */
-    function DataService(inArrayFilter, filterFilter, orderByFilter, rangeFilter, $http, $q, sortOrders, $rootScope, $timeout, dataEvents) {
-
+    function dataservice($q, $http, orderByFilter, rangeFilter, inArrayFilter, filterFilter, sortOrders, $rootScope, dataEvents) {
         var database;
-        var currentSortOrder = 0;
         var itemsPerPage = 6;
-        var sorted = false;
+        var currentSortOrder = 0;
 
         var service = {
+            getPageData: getPageData,
             getItem: getItem,
-            getData: getData,
             getMetaData: getMetaData,
             getCurrentSortOrder: getCurrentSortOrder
         };
 
         return service;
 
+        function getCurrentSortOrder() {
+            return currentSortOrder;
+        }
+
+        // return items for the specified page
+        function getPageData(pageNum, query) {
+            return loadData()
+                .then(complete);
+
+            function complete(response) {
+                database = response.data;
+                sortData(query);
+                filterData(query);
+                var pageData = getPageItems(pageNum);
+                return pageData;
+            }
+        }
+
+        // return item with the specified itemUid
+        function getItem(itemUid) {
+            return loadData()
+                .then(function(response) {
+                    var item = filterFilter(response.data, itemUid)[0];
+                    return item;
+                });
+        }
+
+        // return meta data
         function getMetaData() {
             var metaData = {};
-            metaData.pageTotal = getTotalPages();
-            metaData.itemTotal = getTotalItems();
-            // metaData.currentSortOrder = getCurrentSortOrder();
+            metaData.pageTotal = getPageTotal();
+            metaData.itemTotal = getItemTotal();
             metaData.itemsPerPage = getItemsPerPage();
             return metaData;
         }
 
-        function getData(pageNum, query) {
-            var deferred = $q.defer();
-            loadDatabase()
-                .then(function(response) {
-                    if (angular.isNumber(query.sort)) {
-                        currentSortOrder = query.sort;
-                    }
-                    sortData(response.data, query);
-                    filterData(query);
-                    var pageData = prepareData(pageNum);
-                    deferred.resolve(pageData);
-                });
-            return deferred.promise;
+        function getPageTotal() {
+            return Math.ceil(database.length / itemsPerPage);
         }
 
-        function getItem(itemUid) {
-            var deferred = $q.defer();
-            loadDatabase()
-                .then(function(response) {
-                    var item = filterFilter(response.data, itemUid)[0];
-                    deferred.resolve(item);
-                });
-            return deferred.promise;
+        function getItemTotal() {
+            return database.length;
+        }
 
+        function getItemsPerPage() {
+            return itemsPerPage;
+        }
+
+        // return the items for the corresponding page number
+        function getPageItems(pageNum) {
+            var start = (pageNum - 1) * itemsPerPage;
+            var end = pageNum * itemsPerPage;
+            // if page 1, start index is 0
+            if (pageNum === 1) {
+                start = 0;
+            }
+
+            return database.slice(start, end);
+        }
+
+        function loadData() {
+            return $http.get('data/database.json');
+        }
+
+        // sort database using currentSortOrder
+        function sortData(query) {
+            // if there is a sort order query passed in
+            if (angular.isNumber(query.sort)) {
+                currentSortOrder = query.sort;
+            }
+            database = orderByFilter(database, sortOrders[currentSortOrder].value);
+            $rootScope.$broadcast(dataEvents.dataChanged);
         }
 
         function filterData(query) {
@@ -85,47 +118,6 @@
             }
         }
 
-        function prepareData(pageNum) {
-            var data = {};
-            data.items = getCurrentPageItems(pageNum);
-            return data;
-        }
-
-        function sortData(data) {
-            database = orderByFilter(data, sortOrders[currentSortOrder].value);
-            $rootScope.$broadcast(dataEvents.dataChanged);
-        }
-
-        function loadDatabase() {
-            return $http.get('data/database.json');
-        }
-
-        function getItemsPerPage() {
-            return itemsPerPage;
-        }
-
-        function getCurrentSortOrder() {
-            return currentSortOrder;
-        }
-
-        function getTotalPages() {
-            return Math.ceil(database.length / itemsPerPage);
-        }
-
-        function getTotalItems() {
-            return database.length;
-        }
-
-        function getCurrentPageItems(pageNum) {
-            var start = (pageNum - 1) * itemsPerPage;
-            var end = pageNum * itemsPerPage;
-            // if page 1, start index is 0
-            if (pageNum === 1) {
-                start = 0;
-            }
-
-            return database.slice(start, end);
-        }
     }
 
-}());
+})();

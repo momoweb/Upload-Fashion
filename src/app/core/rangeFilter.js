@@ -1,6 +1,5 @@
 (function() {
     'use strict';
-
     angular
         .module('upload')
         .filter('range', function() {
