@@ -1,0 +1,17 @@
+#shopping-cart-modal {
+  h4 {
+    padding-left: .44em;
+  }
+  #paynow-btn {
+    text-align: right;
+    button {
+      margin-bottom: 1em;
+      margin-right: 1em;
+    }
+  }
+  tr td p {
+    color: $link-blue;
+    cursor: pointer;
+  }
+}
+

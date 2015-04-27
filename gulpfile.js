@@ -37,9 +37,9 @@ gulp.task('css', function() {
 });
 
 gulp.task('sass', function() {
-    gulp.src('src/**/*.scss')
+    gulp.src('src/css/app.scss')
         .pipe(plug.sass())
-        .pipe(gulp.dest('.tmp'))
+        .pipe(gulp.dest('.tmp/css'))
         .pipe(plug.livereload());
 });
 

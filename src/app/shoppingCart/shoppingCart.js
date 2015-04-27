@@ -19,7 +19,7 @@
         }
 
         function detailView(item) {
-            $modalInstance.dismiss('see item detail');
+            $modalInstance.dismiss('go to detail view');
             $state.go('detail', {itemUid: item.uid});
         }
 
