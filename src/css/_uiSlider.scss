@@ -1,0 +1,9 @@
+.priceSlider {
+    width: 100%;
+    padding: 1em;
+}
+
+.ui-widget-header {
+    background: none;
+    background-color: lighten($price-orange, 25%);
+}

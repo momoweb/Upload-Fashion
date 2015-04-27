@@ -1,6 +1,4 @@
-.gallery-item {
-  margin-bottom: 3em;
-}
+
 
 #content-gallery {
   padding-top: 2em;
@@ -9,5 +7,17 @@
   }
   h4 {
     text-align: center;
+  }
+  .gallery-item {
+    margin-bottom: 3em;
+  }
+  .pagination-sm > li:first-child > a, .pagination-sm > li:first-child > span {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .pagination-sm > li:last-child > a, .pagination-sm > li:last-child > span {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 }

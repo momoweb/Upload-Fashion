@@ -1,18 +1,25 @@
-#detail-back-btn {
-  color: #fff;
-}
-
-#item-detail {
-  margin-top: 2em;
-  .img-thumbnail {
-    border: 0;
+#content-detail {
+  #detail-back-btn {
+    color: #fff;
   }
-}
 
-#item-info {
-  padding: 0 1.5em;
-  button {
+  #item-detail {
     margin-top: 2em;
-    border-radius: 0;
+    .img-thumbnail {
+      border: 0;
+    }
+  }
+
+  #item-info {
+    padding: 0 1.5em;
+    button {
+      margin-top: 2em;
+      border-radius: 0;
+    }
+  }
+
+  .btn:focus {
+    outline: none;
   }
 }
+
