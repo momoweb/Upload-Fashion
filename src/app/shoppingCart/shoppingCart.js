@@ -27,7 +27,7 @@
             ShoppingCart.checkout();
         }
 
-        $scope.$on(cartEvents.checkout, function(){
+        $scope.$on(cartEvents.checkout, function() {
             $modalInstance.dismiss('checkout complete');
             $state.go('thankyou');
         });

@@ -96,7 +96,7 @@
         function filterData(query) {
             // type filter exist
             if (query.category) {
-                database = $filter('inArray')(database, 'category' ,query.category);
+                database = $filter('inArray')(database, 'category', query.category);
                 $rootScope.$broadcast(dataEvents.dataChanged);
             }
             // sizes filter exist

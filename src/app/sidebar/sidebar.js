@@ -68,7 +68,7 @@
                 return e.value;
             }).indexOf(vm.newSortValue);
             $location.search('sort', pos);
-            $location.path("/1");
+            $location.path('/1');
         }
 
         function initChecks() {

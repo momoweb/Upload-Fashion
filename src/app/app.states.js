@@ -17,17 +17,17 @@
                     }
                 },
                 views: {
-                    "main": {
+                    'main': {
                         templateUrl: 'app/shell/galleryShell.html',
                         controller: 'GalleryShellController',
                         controllerAs: 'vm'
                     },
-                    "gallery@main": {
+                    'gallery@main': {
                         templateUrl: 'app/gallery/gallery.html',
                         controller: 'GalleryController',
                         controllerAs: 'vm'
                     },
-                    "sidebar@main": {
+                    'sidebar@main': {
                         templateUrl: 'app/sidebar/sidebar.html',
                         controller: 'SidebarController',
                         controllerAs: 'vm'
@@ -47,7 +47,7 @@
                     }
                 },
                 views: {
-                    "main": {
+                    'main': {
                         templateUrl: 'app/detail/detail.html',
                         controller: 'DetailController',
                         controllerAs: 'vm'

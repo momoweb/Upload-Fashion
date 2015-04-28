@@ -14,5 +14,5 @@
             ShoppingCart.addItem(vm.item);
         }
 
-        }
+    }
 })();
