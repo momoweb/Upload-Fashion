@@ -5,7 +5,7 @@
         .factory('dataservice', dataservice);
 
     /* @ngInject */
-    function dataservice($q, $http, orderByFilter, rangeFilter, inArrayFilter, filterFilter, sortOrders, $rootScope, dataEvents) {
+    function dataservice($http, $filter, sortOrders, $rootScope, dataEvents) {
         var database;
         var itemsPerPage = 6;
         var currentSortOrder = 0;
@@ -41,7 +41,7 @@
         function getItem(itemUid) {
             return loadData()
                 .then(function(response) {
-                    var item = filterFilter(response.data, itemUid)[0];
+                    var item = $filter('filter')(response.data, itemUid)[0];
                     return item;
                 });
         }
@@ -89,31 +89,31 @@
             if (angular.isNumber(query.sort)) {
                 currentSortOrder = query.sort;
             }
-            database = orderByFilter(database, sortOrders[currentSortOrder].value);
+            database = $filter('orderBy')(database, sortOrders[currentSortOrder].value);
             $rootScope.$broadcast(dataEvents.dataChanged);
         }
 
         function filterData(query) {
             // type filter exist
             if (query.category) {
-                database = inArrayFilter(database, 'category' ,query.category);
+                database = $filter('inArray')(database, 'category' ,query.category);
                 $rootScope.$broadcast(dataEvents.dataChanged);
             }
             // sizes filter exist
             if (query.sizes) {
-                database = inArrayFilter(database, 'sizes', query.sizes);
+                database = $filter('inArray')(database, 'sizes', query.sizes);
                 $rootScope.$broadcast(dataEvents.dataChanged);
             }
 
             // price filter exist
             if ((query.min >= 0) && (query.max >= 0)) {
-                database = rangeFilter(database, query.min, query.max);
+                database = $filter('range')(database, query.min, query.max);
                 $rootScope.$broadcast(dataEvents.dataChanged);
             }
 
             // color filter exist
             if (query.colors) {
-                database = inArrayFilter(database, 'colors', query.colors);
+                database = $filter('inArray')(database, 'colors', query.colors);
                 $rootScope.$broadcast(dataEvents.dataChanged);
             }
         }
