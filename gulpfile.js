@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var argv = require('yargs').argv;
 var del = require('del');
 var config = require('./gulp.config')();
+var BOWER_COMPONENTS_FOLDER = 'bower_components';
 
 var $ = require('gulp-load-plugins')({lazy: true});
 
@@ -31,7 +32,7 @@ gulp.task('styles', ['clean-styles'], function() {
         .pipe($.plumber())
         .pipe($.sass())
         .pipe($.autoprefixer({browser: ['last 2 version', '> 5%']}))
-        .pipe(gulp.dest(config.temp))
+        .pipe(gulp.dest(config.temp + '/css/'))
 });
 
 /**
@@ -41,11 +42,43 @@ gulp.task('styles', ['clean-styles'], function() {
 gulp.task('clean-styles', function(done) {
    log('Cleaning styles');
    var files = config.temp + '/**/*.css';
-    clean(files, done);
+   clean(files, done);
+});
+
+/**
+ * Wire-up the bower dependencies
+ * @return {Stream}
+ */
+gulp.task('wiredep', function() {
+    log('Wiring the bower dependencies into the html');
+
+    var wiredep = require('wiredep').stream;
+    var options = config.getWiredepDefaultOptions();
+
+    return gulp
+        .src(config.index)
+        .pipe(wiredep(options))
+        .pipe($.inject(gulp.src(config.js), {relative: true}))
+        .pipe(gulp.dest(config.temp))
+        .pipe($.livereload());
+});
+
+gulp.task('html', ['wiredep'], function() {
+    log('Copying html')
+    gulp.src(['src/**/*.html', '!src/index.html'])
+        .pipe(gulp.dest(config.temp))
+        .pipe($.livereload());
+});
+
+gulp.task('scripts', function() {
+    gulp.src('src/**/*.js')
+        .pipe(gulp.dest(config.temp))
+        .pipe($.livereload());
 });
 
 gulp.task('clean', function() {
-    del(['.tmp/']);
+    log('Removing the entire temp folder')
+    del([config.temp]);
 });
 
 ////////////////////////////////////////////////////////////
@@ -74,6 +107,30 @@ function log(msg) {
         $.util.log($.util.colors.blue(msg));
     }
 }
+
+/**
+ * Serve the files after dependency tasks are completed
+ */
+gulp.task('serve', ['styles', 'html', 'scripts'], $.serve({
+    port: 8888,
+    root: ['.tmp', 'resources', BOWER_COMPONENTS_FOLDER]
+}));
+
+/**
+ * Serve and watch for changes
+ */
+gulp.task('serve-dev', ['serve'], function() {
+    $.livereload.listen();
+    //watch index.html
+    gulp.watch([config.index], ['wiredep']);
+    //watch all other html
+    gulp.watch([config.allhtml, '!' + config.index], ['html']);
+    //gulp.watch(['src/**/*.js'], ['scripts']);
+    //gulp.watch(['src/**/*.scss'], ['sass']);
+    //gulp.watch(['src/**/*.css'], ['css']);
+});
+
+//////////////************** old *******************/////////////////
 
 //var gulp = require('gulp');
 //var plug = require('gulp-load-plugins')();
