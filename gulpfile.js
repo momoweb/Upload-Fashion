@@ -1,9 +1,14 @@
 var gulp = require('gulp');
 var argv = require('yargs').argv;
+var del = require('del');
 var config = require('./gulp.config')();
 
 var $ = require('gulp-load-plugins')({lazy: true});
 
+/**
+ * vet all scripts with JSHint and JSCS
+ * @return {stream}
+ */
 gulp.task('vet', function() {
     log('Analyzing js sources with JSHint and JSCS');
     return gulp
@@ -14,6 +19,45 @@ gulp.task('vet', function() {
         .pipe($.jshint.reporter('jshint-stylish', {verbose: true}))
         .pipe($.jshint.reporter('fail'))
 });
+
+/**
+ * compile Sass to CSS
+ * @return {stream}
+ */
+gulp.task('styles', ['clean-styles'], function() {
+    log('Compiling Sass --> CSS');
+    return gulp
+        .src(config.sass)
+        .pipe($.plumber())
+        .pipe($.sass())
+        .pipe($.autoprefixer({browser: ['last 2 version', '> 5%']}))
+        .pipe(gulp.dest(config.temp))
+});
+
+/**
+ * Remove all styles from the temp folder
+ * @param  {Function} done - callback when complete
+ */
+gulp.task('clean-styles', function(done) {
+   log('Cleaning styles');
+   var files = config.temp + '/**/*.css';
+    clean(files, done);
+});
+
+gulp.task('clean', function() {
+    del(['.tmp/']);
+});
+
+////////////////////////////////////////////////////////////
+
+/**
+ * Remove all files from the temp folders
+ * @param  {Function} done - callback when complete
+ */
+function clean(path, done) {
+    log('Cleaning: ' + $.util.colors.blue(path));
+    del(path, done);
+}
 
 /**
  * Log a message or series of messages using chalk's blue color.
