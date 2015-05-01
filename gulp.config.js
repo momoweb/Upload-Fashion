@@ -1,36 +1,34 @@
 module.exports = function() {
+    var app = './src/';
     var bower = {
         //json: require('./bower.json'),
         //directory: './bower_components/',
         exclude: ['bootstrap.js', 'bootstrap.css'],
         ignorePath: ['../bower_components/']
     };
-    var app = './src/';
-    var temp = '.tmp';
+    var temp = '.tmp/';
 
     var config = {
-        temp: temp,
-
         /**
          * File paths
          */
-        sass: [
-          app + 'css/app.scss'
-        ],
-
+        allhtml: app + '**/*.html',
         // all javascript we want to vet
         alljs: [
             app + 'app/**/*.js'
         ],
-        allhtml: app + '**/*.html',
+        bower: bower,
+        build: './build/',
+        fonts: './bower_components/bootstrap/fonts/**.*',
+        images: './resources/images/**/*.*',
         index: app + 'index.html',
         js: [
             app + 'app.js',
             app + '**/*.js',
             '!' + app + 'libs/*.*'
         ],
-        bower: bower
-
+        sass: app + 'css/app.scss',
+        temp: temp
     };
 
     /**

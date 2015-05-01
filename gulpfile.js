@@ -6,19 +6,81 @@ var BOWER_COMPONENTS_FOLDER = 'bower_components';
 
 var $ = require('gulp-load-plugins')({lazy: true});
 
+// TODO
+
+// list gulp tasks
+gulp.task('help', $.taskListing);
+gulp.task('default', ['help']);
+
 /**
- * vet all scripts with JSHint and JSCS
- * @return {stream}
+ * Remove the .tmp and build folders
  */
-gulp.task('vet', function() {
-    log('Analyzing js sources with JSHint and JSCS');
+gulp.task('clean', function(done) {
+    var delConfig = [].concat(config.temp, config.build);
+    log('Cleaning: ' + delConfig);
+    del(delConfig, done);
+});
+
+/**
+ * Remove all styles from the build folder
+ * @param  {Function} done - callback when complete
+ */
+gulp.task('clean-fonts', function(done) {
+    log('Cleaning fonts in build folder');
+    clean(config.build + 'fonts', done);
+});
+
+/**
+ * Remove all images from the build folder
+ * @param  {Function} done - callback when complete
+ */
+gulp.task('clean-images', function(done) {
+    log('Cleaning images in build folder');
+    clean(config.build + 'images', done);
+});
+
+/**
+ * Remove all styles from the temp folder
+ * @param  {Function} done - callback when complete
+ */
+gulp.task('clean-styles', function(done) {
+    log('Cleaning styles');
+    clean(config.temp + '**/*.css', done);
+});
+
+/**
+ * Copy all fonts to build folder
+ */
+gulp.task('fonts', ['clean-fonts'], function() {
+   log('Copying fonts');
     return gulp
-        .src(config.alljs)
-        .pipe($.if(argv.verbose, $.print()))
-        .pipe($.jscs())
-        .pipe($.jshint())
-        .pipe($.jshint.reporter('jshint-stylish', {verbose: true}))
-        .pipe($.jshint.reporter('fail'))
+        .src(config.fonts)
+        .pipe(gulp.dest(config.build + 'fonts/bootstrap/fonts/'))
+});
+
+gulp.task('html', ['wiredep'], function() {
+    log('Copying html');
+    gulp.src(['src/**/*.html', '!src/index.html'])
+        .pipe(gulp.dest(config.temp))
+        .pipe($.livereload());
+});
+
+/**
+ * Copy all fonts to build folder
+ */
+gulp.task('images', ['clean-images'], function() {
+    log('Copying images');
+    return gulp
+        .src(config.images)
+        //.pipe($.imagemin({optimizationLevel: 4}))
+        .pipe(gulp.dest(config.build + 'images'))
+});
+
+gulp.task('scripts', ['vet'], function() {
+    log('Copying javascripts');
+    gulp.src('src/**/*.js')
+        .pipe(gulp.dest(config.temp))
+        .pipe($.livereload());
 });
 
 /**
@@ -36,13 +98,18 @@ gulp.task('styles', ['clean-styles'], function() {
 });
 
 /**
- * Remove all styles from the temp folder
- * @param  {Function} done - callback when complete
+ * vet all scripts with JSHint and JSCS
+ * @return {stream}
  */
-gulp.task('clean-styles', function(done) {
-   log('Cleaning styles');
-   var files = config.temp + '/**/*.css';
-   clean(files, done);
+gulp.task('vet', function() {
+    log('Analyzing js sources with JSHint and JSCS');
+    return gulp
+        .src(config.alljs)
+        .pipe($.if(argv.verbose, $.print()))
+        .pipe($.jscs())
+        .pipe($.jshint())
+        .pipe($.jshint.reporter('jshint-stylish', {verbose: true}))
+        .pipe($.jshint.reporter('fail'))
 });
 
 /**
@@ -63,23 +130,7 @@ gulp.task('wiredep', function() {
         .pipe($.livereload());
 });
 
-gulp.task('html', ['wiredep'], function() {
-    log('Copying html')
-    gulp.src(['src/**/*.html', '!src/index.html'])
-        .pipe(gulp.dest(config.temp))
-        .pipe($.livereload());
-});
 
-gulp.task('scripts', function() {
-    gulp.src('src/**/*.js')
-        .pipe(gulp.dest(config.temp))
-        .pipe($.livereload());
-});
-
-gulp.task('clean', function() {
-    log('Removing the entire temp folder')
-    del([config.temp]);
-});
 
 ////////////////////////////////////////////////////////////
 
@@ -112,8 +163,8 @@ function log(msg) {
  * Serve the files after dependency tasks are completed
  */
 gulp.task('serve', ['styles', 'html', 'scripts'], $.serve({
-    port: 8888,
-    root: ['.tmp', 'resources', BOWER_COMPONENTS_FOLDER]
+        port: 8888,
+        root: ['.tmp', 'resources', BOWER_COMPONENTS_FOLDER]
 }));
 
 /**
@@ -125,8 +176,10 @@ gulp.task('serve-dev', ['serve'], function() {
     gulp.watch([config.index], ['wiredep']);
     //watch all other html
     gulp.watch([config.allhtml, '!' + config.index], ['html']);
-    //gulp.watch(['src/**/*.js'], ['scripts']);
-    //gulp.watch(['src/**/*.scss'], ['sass']);
+    //watch all javascript files
+    gulp.watch(['src/**/*.js'], ['scripts', 'vet']);
+    // watch Sass
+    gulp.watch(['src/**/*.scss'], ['sass']);
     //gulp.watch(['src/**/*.css'], ['css']);
 });
 
