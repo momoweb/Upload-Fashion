@@ -89,7 +89,8 @@
             }
 
             function check(list) {
-                list = UrlQueryService.queryAsArrayFix(list);
+                // see UrlQueryService.removeQuery on why we need to use [].concat
+                list = [].concat(list);
                 list.forEach(function(option) {
                     vm.checkedItems[option] = true;
                 });
