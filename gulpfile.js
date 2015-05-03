@@ -7,10 +7,48 @@ var BOWER_COMPONENTS_FOLDER = 'bower_components';
 var $ = require('gulp-load-plugins')({lazy: true});
 
 // TODO
+// build-dist task: copy all resources folders,
+// copy lib folder
+// replace vendor with cdn
+// copy css from temp
+// jquery ui needs a lib/ prefix
+
 
 // list gulp tasks
 gulp.task('help', $.taskListing);
 gulp.task('default', ['help']);
+
+gulp.task('resources', function() {
+    return gulp
+        .src(config.resources)
+        .pipe(gulp.dest(config.build))
+});
+
+gulp.task('jquery-ui-images', function() {
+   log('Copying images used by jquery-ui');
+   return gulp
+       .src(BOWER_COMPONENTS_FOLDER + '/jquery-ui/themes/smoothness/images/*.*')
+       .pipe(gulp.dest(config.build + 'css/images'))
+
+});
+
+gulp.task('optimize', ['build', 'templatecache', 'resources', 'jquery-ui-images'], function() {
+    log('Optimizing javascripts');
+    var assets = $.useref.assets({searchPath: ['.tmp/', './bower_components/', './']});
+    //var assets = $.useref.assets({searchPath: ['./', './src/', './bower_components/', '.tmp/']});
+    var templateCache = config.temp + config.templateCache.file;
+
+    return gulp
+        .src(config.temp + 'index.html')
+        .pipe($.plumber())
+        .pipe($.inject(gulp.src(templateCache, {read: false}), {
+            starttag: '<!-- inject:templates:js -->'
+        }))
+        .pipe(assets)
+        .pipe(assets.restore())
+        .pipe($.useref())
+        .pipe(gulp.dest(config.build));
+});
 
 /**
  * Remove the .tmp and build folders
@@ -76,11 +114,57 @@ gulp.task('images', ['clean-images'], function() {
         .pipe(gulp.dest(config.build + 'images'))
 });
 
+gulp.task('lib', function() {
+    log('Copying 3rd party libraries');
+    return gulp
+        .src(config.lib)
+        .pipe(gulp.dest(config.temp + 'lib'))
+});
+
 gulp.task('scripts', ['vet'], function() {
     log('Copying javascripts');
     gulp.src('src/**/*.js')
         .pipe(gulp.dest(config.temp))
         .pipe($.livereload());
+});
+
+/**
+ * Build and serve the dev version
+ */
+gulp.task('serve', ['build'], $.serve({
+    port: 8888,
+    root: ['.tmp', 'resources', BOWER_COMPONENTS_FOLDER]
+}));
+
+
+/**
+ * Build and serve the dist version
+ */
+gulp.task('serve-dist', $.serve({
+    port: 7777,
+    root: ['./build/']
+}));
+
+/**
+ * Build development version
+ * No source files are changed, all new files are outputted to temp folder.
+ */
+gulp.task('build', ['styles', 'scripts', 'html', 'lib'], function() {
+});
+
+/**
+ * Serve and watch for changes
+ */
+gulp.task('serve-dev', ['serve'], function() {
+    $.livereload.listen();
+    //watch index.html
+    gulp.watch([config.index], ['wiredep']);
+    //watch all other html
+    gulp.watch([config.allhtml, '!' + config.index], ['html']);
+    //watch all javascript files
+    gulp.watch(['src/**/*.js'], ['scripts', 'vet']);
+    // watch Sass
+    gulp.watch(['src/**/*.scss'], ['styles']);
 });
 
 /**
@@ -96,6 +180,19 @@ gulp.task('styles', ['clean-styles'], function() {
         .pipe($.autoprefixer({browser: ['last 2 version', '> 5%']}))
         .pipe(gulp.dest(config.temp + '/css/'))
 });
+
+gulp.task('templatecache', ['clean'],function() {
+   log('Creating AngularJS template cache');
+    return gulp
+        .src(config.templates)
+        .pipe($.minifyHtml({empty: true}))
+        .pipe($.angularTemplatecache(
+            config.templateCache.file,
+            config.templateCache.options
+        ))
+        .pipe(gulp.dest(config.temp))
+});
+
 
 /**
  * vet all scripts with JSHint and JSCS
@@ -159,92 +256,211 @@ function log(msg) {
     }
 }
 
-/**
- * Serve the files after dependency tasks are completed
- */
-gulp.task('serve', ['styles', 'html', 'scripts'], $.serve({
-        port: 8888,
-        root: ['.tmp', 'resources', BOWER_COMPONENTS_FOLDER]
-}));
 
-/**
- * Serve and watch for changes
- */
-gulp.task('serve-dev', ['serve'], function() {
-    $.livereload.listen();
-    //watch index.html
-    gulp.watch([config.index], ['wiredep']);
-    //watch all other html
-    gulp.watch([config.allhtml, '!' + config.index], ['html']);
-    //watch all javascript files
-    gulp.watch(['src/**/*.js'], ['scripts', 'vet']);
-    // watch Sass
-    gulp.watch(['src/**/*.scss'], ['sass']);
-    //gulp.watch(['src/**/*.css'], ['css']);
-});
 
-//////////////************** old *******************/////////////////
 
+
+
+
+
+//
 //var gulp = require('gulp');
-//var plug = require('gulp-load-plugins')();
-//var BOWER_COMPONENTS_FOLDER = 'bower_components';
+//var argv = require('yargs').argv;
 //var del = require('del');
+//var config = require('./gulp.config')();
+//var BOWER_COMPONENTS_FOLDER = 'bower_components';
+//
+//var $ = require('gulp-load-plugins')({lazy: true});
+//
+//// TODO
+//
+//// list gulp tasks
+//gulp.task('help', $.taskListing);
+//gulp.task('default', ['help']);
+//
+//gulp.task('build', ['fonts', 'images', 'templatecache', 'styles', 'html', 'scripts'], function() {
+//
+//});
 //
 ///**
-// * Static file server
+// * Remove the .tmp and build folders
 // */
-//gulp.task('serve', plug.serve({
+//gulp.task('clean', function(done) {
+//    var delConfig = [].concat(config.temp, config.build);
+//    log('Cleaning: ' + delConfig);
+//    del(delConfig, done);
+//});
+//
+///**
+// * Remove all styles from the build folder
+// * @param  {Function} done - callback when complete
+// */
+//gulp.task('clean-fonts', function(done) {
+//    log('Cleaning fonts in build folder');
+//    clean(config.build + 'fonts', done);
+//});
+//
+///**
+// * Remove all images from the build folder
+// * @param  {Function} done - callback when complete
+// */
+//gulp.task('clean-images', function(done) {
+//    log('Cleaning images in build folder');
+//    clean(config.build + 'images', done);
+//});
+//
+///**
+// * Remove all styles from the temp folder
+// * @param  {Function} done - callback when complete
+// */
+//gulp.task('clean-styles', function(done) {
+//    log('Cleaning styles');
+//    clean(config.temp + '**/*.css', done);
+//});
+//
+///**
+// * Copy all fonts to build folder
+// */
+//gulp.task('fonts', ['clean-fonts'], function() {
+//    log('Copying fonts');
+//    return gulp
+//        .src(config.fonts)
+//        .pipe(gulp.dest(config.build + 'fonts/bootstrap/fonts/'))
+//});
+//
+//gulp.task('html', ['wiredep'], function() {
+//    log('Copying html');
+//    gulp.src(['src/**/*.html', '!src/index.html'])
+//        .pipe(gulp.dest(config.temp))
+//        .pipe($.livereload());
+//});
+//
+///**
+// * Copy all fonts to build folder
+// */
+//gulp.task('images', ['clean-images'], function() {
+//    log('Copying images');
+//    return gulp
+//        .src(config.images)
+//        //.pipe($.imagemin({optimizationLevel: 4}))
+//        .pipe(gulp.dest(config.build + 'images'))
+//});
+//
+//gulp.task('scripts', ['vet'], function() {
+//    log('Copying javascripts');
+//    gulp.src('src/**/*.js')
+//        .pipe(gulp.dest(config.temp))
+//        .pipe($.livereload());
+//});
+//
+///**
+// * Serve the files after dependency tasks are completed
+// */
+//gulp.task('serve', ['styles', 'html', 'scripts'], $.serve({
 //    port: 8888,
 //    root: ['.tmp', 'resources', BOWER_COMPONENTS_FOLDER]
 //}));
 //
-//gulp.task('index', function() {
-//    gulp.src('src/index.html')
-//        .pipe(gulp.dest('.tmp'))
-//        .pipe(plug.livereload());
-//});
-//
-//gulp.task('html', function() {
-//    gulp.src(['src/**/*.html', '!src/index.html'])
-//        .pipe(gulp.dest('.tmp'))
-//        .pipe(plug.livereload());
-//});
-//
-//gulp.task('scripts', function() {
-//    gulp.src('src/**/*.js')
-//        .pipe(gulp.dest('.tmp'))
-//        .pipe(plug.livereload());
-//});
-//
-//gulp.task('css', function() {
-//    gulp.src('src/**/*.css')
-//        .pipe(plug.sass())
-//        .pipe(gulp.dest('.tmp'))
-//        .pipe(plug.livereload());
-//});
-//
-//gulp.task('sass', function() {
-//    gulp.src('src/css/app.scss')
-//        .pipe(plug.sass())
-//        .pipe(gulp.dest('.tmp/css'))
-//        .pipe(plug.livereload());
-//});
-//
-//gulp.task('fonts', function() {
-//    gulp.src('src/fonts/**/*.*')
-//        .pipe(gulp.dest('.tmp/fonts/'))
-//        .pipe(plug.livereload());
-//});
-//
-//gulp.task('clean', function() {
-//    del(['.tmp/']);
-//});
-//
-//gulp.task('serve-dev', ['serve', 'index', 'html', 'scripts', 'css', 'sass', 'fonts'], function() {
-//    plug.livereload.listen();
-//    gulp.watch(['src/index.html'], ['index']);
-//    gulp.watch(['src/**/*.html', '!src/index.html'], ['html']);
-//    gulp.watch(['src/**/*.js'], ['scripts']);
+///**
+// * Serve and watch for changes
+// */
+//gulp.task('serve-dev', ['serve'], function() {
+//    $.livereload.listen();
+//    //watch index.html
+//    gulp.watch([config.index], ['wiredep']);
+//    //watch all other html
+//    gulp.watch([config.allhtml, '!' + config.index], ['html']);
+//    //watch all javascript files
+//    gulp.watch(['src/**/*.js'], ['scripts', 'vet']);
+//    // watch Sass
 //    gulp.watch(['src/**/*.scss'], ['sass']);
-//    gulp.watch(['src/**/*.css'], ['css']);
 //});
+//
+///**
+// * compile Sass to CSS
+// * @return {stream}
+// */
+//gulp.task('styles', ['clean-styles'], function() {
+//    log('Compiling Sass --> CSS');
+//    return gulp
+//        .src(config.sass)
+//        .pipe($.plumber())
+//        .pipe($.sass())
+//        .pipe($.autoprefixer({browser: ['last 2 version', '> 5%']}))
+//        .pipe(gulp.dest(config.temp + '/css/'))
+//});
+//
+//gulp.task('templatecache', ['clean'],function() {
+//    log('Creating AngularJS template cache');
+//    return gulp
+//        .src(config.templates)
+//        .pipe($.minifyHtml({empty: true}))
+//        .pipe($.angularTemplatecache(
+//            config.templateCache.file,
+//            config.templateCache.options
+//        ))
+//        .pipe(gulp.dest(config.temp))
+//});
+//
+//
+///**
+// * vet all scripts with JSHint and JSCS
+// * @return {stream}
+// */
+//gulp.task('vet', function() {
+//    log('Analyzing js sources with JSHint and JSCS');
+//    return gulp
+//        .src(config.alljs)
+//        .pipe($.if(argv.verbose, $.print()))
+//        .pipe($.jscs())
+//        .pipe($.jshint())
+//        .pipe($.jshint.reporter('jshint-stylish', {verbose: true}))
+//        .pipe($.jshint.reporter('fail'))
+//});
+//
+///**
+// * Wire-up the bower dependencies
+// * @return {Stream}
+// */
+//gulp.task('wiredep', function() {
+//    log('Wiring the bower dependencies into the html');
+//
+//    var wiredep = require('wiredep').stream;
+//    var options = config.getWiredepDefaultOptions();
+//
+//    return gulp
+//        .src(config.index)
+//        .pipe(wiredep(options))
+//        .pipe($.inject(gulp.src(config.js), {relative: true}))
+//        .pipe(gulp.dest(config.temp))
+//        .pipe($.livereload());
+//});
+//
+//
+//
+//////////////////////////////////////////////////////////////
+//
+///**
+// * Remove all files from the temp folders
+// * @param  {Function} done - callback when complete
+// */
+//function clean(path, done) {
+//    log('Cleaning: ' + $.util.colors.blue(path));
+//    del(path, done);
+//}
+//
+///**
+// * Log a message or series of messages using chalk's blue color.
+// * Can pass in a string, object or array.
+// */
+//function log(msg) {
+//    if (typeof(msg) === 'object') {
+//        for (var item in msg) {
+//            if (msg.hasOwnProperty(item)) {
+//                $.util.log($.util.colors.blue(msg[item]));
+//            }
+//        }
+//    } else {
+//        $.util.log($.util.colors.blue(msg));
+//    }
+//}

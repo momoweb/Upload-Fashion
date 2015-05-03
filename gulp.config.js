@@ -27,8 +27,19 @@ module.exports = function() {
             app + '**/*.js',
             '!' + app + 'libs/*.*'
         ],
+        lib: app + '/lib/**/*.*',
+        resources: './resources/**/*.*',
         sass: app + 'css/app.scss',
-        temp: temp
+        temp: temp,
+        templates: app + 'app/**/*.html',   // all html excluding index
+        templateCache: {
+            file: 'templates.js',
+            options: {
+                module: 'upload',
+                root: 'app/',
+                standAlone: false
+            }
+        }
     };
 
     /**
