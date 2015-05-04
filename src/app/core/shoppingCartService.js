@@ -80,7 +80,8 @@
 
         function containsItem(uid) {
             var i;
-            for (i = 0; i < cartContents.length; i++) {
+            var cl = cartContents.length;
+            for (i = 0; i < cl; i++) {
                 if (cartContents[i].uid === uid) {
                     return i;
                 }

@@ -15,10 +15,12 @@
                     needle = [needle];
                 }
                 // check if items in needle is in haystack
-                for (i = 0; i < haystack.length; i++) {
+                var hl = haystack.length;
+                var nl = needle.length;
+                for (i = 0; i < hl; i++) {
                     item = haystack[i];
                     var inItem = false;
-                    for (j = 0; j < needle.length; j++) {
+                    for (j = 0; j < nl; j++) {
                         if ((item[category].indexOf(needle[j]) !== -1)) {
                             inItem = true;
                         }
