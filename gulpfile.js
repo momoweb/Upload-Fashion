@@ -3,70 +3,24 @@ var argv = require('yargs').argv;
 var del = require('del');
 var config = require('./gulp.config')();
 var BOWER_COMPONENTS_FOLDER = 'bower_components';
-
 var $ = require('gulp-load-plugins')({lazy: true});
-
-// TODO
-// build-dist task: copy all resources folders,
-// copy lib folder
-// replace vendor with cdn
-// copy css from temp
-// jquery ui needs a lib/ prefix
-
 
 // list gulp tasks
 gulp.task('help', $.taskListing);
 gulp.task('default', ['help']);
 
+/**
+ * Build development version
+ * No source files are changed, all new files are outputted to temp folder.
+ */
+gulp.task('build', ['styles', 'scripts', 'html', 'lib'], function() {
+});
+
 gulp.task('resources', function() {
+    log('Copying resources to build folder')
     return gulp
         .src(config.resources)
         .pipe(gulp.dest(config.build))
-});
-
-gulp.task('jquery-ui-images', function() {
-   log('Copying images used by jquery-ui');
-   return gulp
-       .src(BOWER_COMPONENTS_FOLDER + '/jquery-ui/themes/smoothness/images/*.*')
-       .pipe(gulp.dest(config.build + 'css/images'))
-
-});
-
-gulp.task('optimize', ['build', 'templatecache', 'resources', 'jquery-ui-images'], function() {
-    log('Optimizing javascripts');
-    var assets = $.useref.assets({searchPath: ['.tmp/', './bower_components/', './']});
-    var templateCache = config.temp + config.templateCache.file;
-    var cssFilter = $.filter('**/*.css');
-    var jsLibFilter = $.filter('**/lib.js');
-    var jsAppFilter = $.filter('**/app.js');
-
-    return gulp
-        .src(config.temp + 'index.html')
-        .pipe($.plumber())
-        .pipe($.inject(gulp.src(templateCache, {read: false}), {
-            starttag: '<!-- inject:templates:js -->'
-        }))
-        .pipe(assets)
-
-        //css min
-        .pipe(cssFilter)
-        .pipe($.csso())
-        .pipe(cssFilter.restore())
-
-        //vendor js min
-        .pipe(jsLibFilter)
-        .pipe($.uglify())
-        .pipe(jsLibFilter.restore())
-
-        //app js annotate and min
-        .pipe(jsAppFilter)
-        .pipe($.ngAnnotate())
-        .pipe($.uglify())
-        .pipe(jsAppFilter.restore())
-
-        .pipe(assets.restore())
-        .pipe($.useref())
-        .pipe(gulp.dest(config.build));
 });
 
 /**
@@ -133,11 +87,56 @@ gulp.task('images', ['clean-images'], function() {
         .pipe(gulp.dest(config.build + 'images'))
 });
 
+gulp.task('jquery-ui-images', function() {
+    log('Copying images used by jquery-ui to build folder');
+    return gulp
+        .src(BOWER_COMPONENTS_FOLDER + '/jquery-ui/themes/smoothness/images/*.*')
+        .pipe(gulp.dest(config.build + 'css/images'))
+
+});
+
 gulp.task('lib', function() {
     log('Copying 3rd party libraries');
     return gulp
         .src(config.lib)
         .pipe(gulp.dest(config.temp + 'lib'))
+});
+
+gulp.task('optimize', ['build', 'templatecache', 'resources', 'jquery-ui-images'], function() {
+    log('Optimizing javascripts');
+    var assets = $.useref.assets({searchPath: ['.tmp/', './bower_components/', './']});
+    var templateCache = config.temp + config.templateCache.file;
+    var cssFilter = $.filter('**/*.css');
+    var jsLibFilter = $.filter('**/lib.js');
+    var jsAppFilter = $.filter('**/app.js');
+
+    return gulp
+        .src(config.temp + 'index.html')
+        .pipe($.plumber())
+        .pipe($.inject(gulp.src(templateCache, {read: false}), {
+            starttag: '<!-- inject:templates:js -->'
+        }))
+        .pipe(assets)
+
+        //css min
+        .pipe(cssFilter)
+        .pipe($.csso())
+        .pipe(cssFilter.restore())
+
+        //vendor js min
+        .pipe(jsLibFilter)
+        .pipe($.uglify())
+        .pipe(jsLibFilter.restore())
+
+        //app js annotate and min
+        .pipe(jsAppFilter)
+        .pipe($.ngAnnotate())
+        .pipe($.uglify())
+        .pipe(jsAppFilter.restore())
+
+        .pipe(assets.restore())
+        .pipe($.useref())
+        .pipe(gulp.dest(config.build));
 });
 
 gulp.task('scripts', ['vet'], function() {
@@ -155,7 +154,6 @@ gulp.task('serve', ['build'], $.serve({
     root: ['.tmp', 'resources', BOWER_COMPONENTS_FOLDER]
 }));
 
-
 /**
  * Build and serve the dist version
  */
@@ -163,13 +161,6 @@ gulp.task('serve-dist', $.serve({
     port: 7777,
     root: ['./build/']
 }));
-
-/**
- * Build development version
- * No source files are changed, all new files are outputted to temp folder.
- */
-gulp.task('build', ['styles', 'scripts', 'html', 'lib'], function() {
-});
 
 /**
  * Serve and watch for changes
@@ -212,7 +203,6 @@ gulp.task('templatecache', ['clean'],function() {
         .pipe(gulp.dest(config.temp))
 });
 
-
 /**
  * vet all scripts with JSHint and JSCS
  * @return {stream}
@@ -245,8 +235,6 @@ gulp.task('wiredep', function() {
         .pipe(gulp.dest(config.temp))
         .pipe($.livereload());
 });
-
-
 
 ////////////////////////////////////////////////////////////
 
