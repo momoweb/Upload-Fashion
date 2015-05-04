@@ -1,0 +1,7 @@
+// TODO
+keyboard shortcut = cmd + 6
+
+add ngCloak to reduce browser flickering
+replace Selection element in sidebar, atm it's different on FF and IE.
+add available color in detail
+add available sizes in detail
