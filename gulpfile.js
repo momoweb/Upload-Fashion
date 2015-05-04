@@ -35,8 +35,10 @@ gulp.task('jquery-ui-images', function() {
 gulp.task('optimize', ['build', 'templatecache', 'resources', 'jquery-ui-images'], function() {
     log('Optimizing javascripts');
     var assets = $.useref.assets({searchPath: ['.tmp/', './bower_components/', './']});
-    //var assets = $.useref.assets({searchPath: ['./', './src/', './bower_components/', '.tmp/']});
     var templateCache = config.temp + config.templateCache.file;
+    var cssFilter = $.filter('**/*.css');
+    var jsLibFilter = $.filter('**/lib.js');
+    var jsAppFilter = $.filter('**/app.js');
 
     return gulp
         .src(config.temp + 'index.html')
@@ -45,6 +47,23 @@ gulp.task('optimize', ['build', 'templatecache', 'resources', 'jquery-ui-images'
             starttag: '<!-- inject:templates:js -->'
         }))
         .pipe(assets)
+
+        //css min
+        .pipe(cssFilter)
+        .pipe($.csso())
+        .pipe(cssFilter.restore())
+
+        //vendor js min
+        .pipe(jsLibFilter)
+        .pipe($.uglify())
+        .pipe(jsLibFilter.restore())
+
+        //app js annotate and min
+        .pipe(jsAppFilter)
+        .pipe($.ngAnnotate())
+        .pipe($.uglify())
+        .pipe(jsAppFilter.restore())
+
         .pipe(assets.restore())
         .pipe($.useref())
         .pipe(gulp.dest(config.build));

@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular.module('upload')
-        .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', configRoutes])
+        .config(configRoutes)
         .run(['$state', function($state) {
             // include $state to kickstart the router
         }]);
