@@ -40,7 +40,7 @@
       "blue",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -87,7 +87,7 @@
       "red",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -151,7 +151,7 @@
     "colors": [
       "blue",
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -239,7 +239,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -260,7 +260,7 @@
     ],
     "colors": [
       "blue",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -304,7 +304,7 @@
     "colors": [
       "blue",
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -351,7 +351,7 @@
     "colors": [
       "black",
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -373,7 +373,7 @@
     ],
     "colors": [
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -416,7 +416,7 @@
     "colors": [
       "blue",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -438,7 +438,7 @@
     "colors": [
       "red",
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -531,7 +531,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -551,7 +551,7 @@
       "blue",
       "red",
       "black",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -571,7 +571,7 @@
     ],
     "colors": [
       "blue",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -640,7 +640,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -683,7 +683,7 @@
     "colors": [
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -706,7 +706,7 @@
     ],
     "colors": [
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -770,7 +770,7 @@
     "colors": [
       "blue",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -865,7 +865,7 @@
     "colors": [
       "blue",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -906,7 +906,7 @@
       "red",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -946,7 +946,7 @@
     ],
     "colors": [
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -969,7 +969,7 @@
     "colors": [
       "black",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -989,7 +989,7 @@
     "colors": [
       "red",
       "pink",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -1010,7 +1010,7 @@
     ],
     "colors": [
       "blue",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -1124,7 +1124,7 @@
       "red",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -1236,7 +1236,7 @@
     "colors": [
       "blue",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -1255,7 +1255,7 @@
     ],
     "colors": [
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -1299,7 +1299,7 @@
     "colors": [
       "red",
       "black",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -1342,7 +1342,7 @@
       "red",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -1392,7 +1392,7 @@
       "red",
       "black",
       "pink",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -1483,7 +1483,7 @@
       "red",
       "black",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -1526,7 +1526,7 @@
       "UK8"
     ],
     "colors": [
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -1545,7 +1545,7 @@
       "UK6"
     ],
     "colors": [
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -1566,7 +1566,7 @@
       "blue",
       "red",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -1612,7 +1612,7 @@
     ],
     "colors": [
       "blue",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -1659,7 +1659,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -1704,7 +1704,7 @@
     "colors": [
       "blue",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -1746,7 +1746,7 @@
       "blue",
       "red",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -1768,7 +1768,7 @@
     ],
     "colors": [
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -1856,7 +1856,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -1899,7 +1899,7 @@
     "colors": [
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -1921,7 +1921,7 @@
     "colors": [
       "blue",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -1944,7 +1944,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -1991,7 +1991,7 @@
     "colors": [
       "blue",
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -2013,7 +2013,7 @@
       "blue",
       "red",
       "black",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -2034,7 +2034,7 @@
       "blue",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -2057,7 +2057,7 @@
     "colors": [
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -2079,7 +2079,7 @@
     "colors": [
       "blue",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -2101,7 +2101,7 @@
     "colors": [
       "red",
       "black",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -2167,7 +2167,7 @@
     ],
     "colors": [
       "red",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -2189,7 +2189,7 @@
       "red",
       "black",
       "pink",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -2216,7 +2216,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -2280,7 +2280,7 @@
     ],
     "colors": [
       "blue",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -2303,7 +2303,7 @@
       "blue",
       "pink",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -2324,7 +2324,7 @@
     "colors": [
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -2410,7 +2410,7 @@
       "red",
       "black",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -2432,7 +2432,7 @@
     "colors": [
       "pink",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -2477,7 +2477,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -2499,7 +2499,7 @@
       "blue",
       "red",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -2521,7 +2521,7 @@
       "blue",
       "red",
       "black",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -2541,7 +2541,7 @@
     "colors": [
       "red",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -2627,7 +2627,7 @@
     ],
     "colors": [
       "blue",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -2647,7 +2647,7 @@
     ],
     "colors": [
       "pink",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -2669,7 +2669,7 @@
     "colors": [
       "blue",
       "black",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -2715,7 +2715,7 @@
       "blue",
       "black",
       "pink",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -2740,7 +2740,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -2789,7 +2789,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -2835,7 +2835,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -2918,7 +2918,7 @@
       "UK8"
     ],
     "colors": [
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -3003,7 +3003,7 @@
       "blue",
       "red",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -3070,7 +3070,7 @@
     "colors": [
       "blue",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -3116,7 +3116,7 @@
     ],
     "colors": [
       "blue",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -3141,7 +3141,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -3185,7 +3185,7 @@
       "blue",
       "red",
       "black",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -3255,7 +3255,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -3303,7 +3303,7 @@
       "red",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -3348,7 +3348,7 @@
       "red",
       "pink",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -3368,7 +3368,7 @@
     "colors": [
       "red",
       "black",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -3408,7 +3408,7 @@
     "colors": [
       "blue",
       "black",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -3450,7 +3450,7 @@
     "colors": [
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -3469,7 +3469,7 @@
     ],
     "colors": [
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -3514,7 +3514,7 @@
       "red",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -3536,7 +3536,7 @@
     "colors": [
       "red",
       "black",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -3577,7 +3577,7 @@
     "colors": [
       "black",
       "pink",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -3599,7 +3599,7 @@
     "colors": [
       "red",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -3662,7 +3662,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -3686,7 +3686,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -3710,7 +3710,7 @@
       "blue",
       "red",
       "black",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -3798,7 +3798,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -3822,7 +3822,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -3843,7 +3843,7 @@
     ],
     "colors": [
       "red",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -3974,7 +3974,7 @@
       "blue",
       "red",
       "black",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -3995,7 +3995,7 @@
     ],
     "colors": [
       "black",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -4021,7 +4021,7 @@
       "red",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -4044,7 +4044,7 @@
       "red",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -4093,7 +4093,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -4138,7 +4138,7 @@
     "colors": [
       "blue",
       "red",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -4179,7 +4179,7 @@
     "colors": [
       "blue",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -4245,7 +4245,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -4309,7 +4309,7 @@
       "blue",
       "red",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -4328,7 +4328,7 @@
     ],
     "colors": [
       "blue",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -4370,7 +4370,7 @@
     "colors": [
       "blue",
       "red",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -4455,7 +4455,7 @@
     ],
     "colors": [
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -4480,7 +4480,7 @@
       "blue",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -4525,7 +4525,7 @@
       "UK7"
     ],
     "colors": [
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -4547,7 +4547,7 @@
       "blue",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -4592,7 +4592,7 @@
       "red",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -4679,7 +4679,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -4746,7 +4746,7 @@
     "colors": [
       "red",
       "pink",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -4771,7 +4771,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -4837,7 +4837,7 @@
       "blue",
       "red",
       "black",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -4858,7 +4858,7 @@
     "colors": [
       "blue",
       "pink",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -4882,7 +4882,7 @@
       "red",
       "black",
       "pink",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -4903,7 +4903,7 @@
       "blue",
       "red",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -5034,7 +5034,7 @@
       "red",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -5055,7 +5055,7 @@
     "colors": [
       "red",
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -5079,7 +5079,7 @@
     ],
     "colors": [
       "pink",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -5103,7 +5103,7 @@
       "blue",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -5170,7 +5170,7 @@
       "red",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -5346,7 +5346,7 @@
       "red",
       "black",
       "pink",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -5367,7 +5367,7 @@
     ],
     "colors": [
       "black",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -5431,7 +5431,7 @@
       "red",
       "black",
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -5472,7 +5472,7 @@
       "blue",
       "red",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -5496,7 +5496,7 @@
     "colors": [
       "red",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -5516,7 +5516,7 @@
       "blue",
       "red",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -5560,7 +5560,7 @@
     "colors": [
       "red",
       "pink",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -5582,7 +5582,7 @@
     "colors": [
       "black",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -5602,7 +5602,7 @@
       "blue",
       "red",
       "pink",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -5625,7 +5625,7 @@
     ],
     "colors": [
       "red",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -5650,7 +5650,7 @@
       "red",
       "black",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -5671,7 +5671,7 @@
       "blue",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -5720,7 +5720,7 @@
       "blue",
       "black",
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -5763,7 +5763,7 @@
     "colors": [
       "black",
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -5846,7 +5846,7 @@
     ],
     "colors": [
       "red",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -5871,7 +5871,7 @@
       "red",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -5895,7 +5895,7 @@
     "colors": [
       "blue",
       "red",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -5981,7 +5981,7 @@
     "colors": [
       "black",
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -6003,7 +6003,7 @@
     "colors": [
       "blue",
       "pink",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -6048,7 +6048,7 @@
       "blue",
       "black",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -6070,7 +6070,7 @@
     "colors": [
       "blue",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -6091,7 +6091,7 @@
     "colors": [
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -6115,7 +6115,7 @@
       "red",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -6138,7 +6138,7 @@
     "colors": [
       "blue",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -6183,7 +6183,7 @@
       "red",
       "black",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -6204,7 +6204,7 @@
     "colors": [
       "red",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -6224,7 +6224,7 @@
     "colors": [
       "blue",
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -6271,7 +6271,7 @@
       "blue",
       "red",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -6316,7 +6316,7 @@
     "colors": [
       "blue",
       "black",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -6379,7 +6379,7 @@
     "colors": [
       "blue",
       "red",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -6427,7 +6427,7 @@
       "red",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -6471,7 +6471,7 @@
     "colors": [
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -6521,7 +6521,7 @@
     "colors": [
       "black",
       "pink",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -6607,7 +6607,7 @@
       "blue",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -6632,7 +6632,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -6723,7 +6723,7 @@
     "colors": [
       "blue",
       "black",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -6744,7 +6744,7 @@
     "colors": [
       "blue",
       "black",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -6788,7 +6788,7 @@
       "red",
       "black",
       "pink",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -6813,7 +6813,7 @@
       "blue",
       "red",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -6880,7 +6880,7 @@
       "red",
       "black",
       "pink",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -6904,7 +6904,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -6929,7 +6929,7 @@
       "red",
       "black",
       "pink",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -6949,7 +6949,7 @@
     ],
     "colors": [
       "black",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -6969,7 +6969,7 @@
     ],
     "colors": [
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -6989,7 +6989,7 @@
     ],
     "colors": [
       "pink",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -7033,7 +7033,7 @@
       "blue",
       "red",
       "black",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -7079,7 +7079,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -7233,7 +7233,7 @@
       "UK4"
     ],
     "colors": [
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -7337,7 +7337,7 @@
     ],
     "colors": [
       "red",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -7363,7 +7363,7 @@
       "blue",
       "black",
       "pink",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -7408,7 +7408,7 @@
       "red",
       "black",
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -7470,7 +7470,7 @@
     "colors": [
       "red",
       "black",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -7492,7 +7492,7 @@
     ],
     "colors": [
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -7562,7 +7562,7 @@
     "colors": [
       "black",
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -7588,7 +7588,7 @@
       "red",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -7682,7 +7682,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -7727,7 +7727,7 @@
     "colors": [
       "red",
       "black",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -7749,7 +7749,7 @@
       "blue",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -7774,7 +7774,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -7841,7 +7841,7 @@
       "red",
       "black",
       "pink",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -7904,7 +7904,7 @@
     "colors": [
       "black",
       "pink",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -7952,7 +7952,7 @@
     ],
     "colors": [
       "red",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -7977,7 +7977,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -8104,7 +8104,7 @@
     "colors": [
       "blue",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -8177,7 +8177,7 @@
       "red",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -8219,7 +8219,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -8263,7 +8263,7 @@
       "UK8"
     ],
     "colors": [
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -8287,7 +8287,7 @@
     "colors": [
       "red",
       "pink",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -8356,7 +8356,7 @@
       "blue",
       "black",
       "pink",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -8458,7 +8458,7 @@
     "colors": [
       "blue",
       "black",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -8478,7 +8478,7 @@
       "UK5"
     ],
     "colors": [
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -8520,7 +8520,7 @@
     "colors": [
       "black",
       "pink",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -8542,7 +8542,7 @@
     ],
     "colors": [
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -8568,7 +8568,7 @@
       "blue",
       "red",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -8592,7 +8592,7 @@
       "blue",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -8614,7 +8614,7 @@
     "colors": [
       "red",
       "black",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -8656,7 +8656,7 @@
     "colors": [
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -8718,7 +8718,7 @@
     "colors": [
       "red",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -8808,7 +8808,7 @@
       "red",
       "black",
       "pink",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -8830,7 +8830,7 @@
     "colors": [
       "black",
       "pink",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -8855,7 +8855,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -8877,7 +8877,7 @@
     "colors": [
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -8987,7 +8987,7 @@
       "blue",
       "red",
       "pink",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -9076,7 +9076,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -9122,7 +9122,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -9143,7 +9143,7 @@
     "colors": [
       "red",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -9258,7 +9258,7 @@
       "blue",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -9282,7 +9282,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -9305,7 +9305,7 @@
     ],
     "colors": [
       "black",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -9348,7 +9348,7 @@
       "blue",
       "red",
       "black",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -9372,7 +9372,7 @@
     "colors": [
       "red",
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -9393,7 +9393,7 @@
     "colors": [
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -9474,7 +9474,7 @@
       "red",
       "black",
       "pink",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -9624,7 +9624,7 @@
     ],
     "colors": [
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -9670,7 +9670,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -9690,7 +9690,7 @@
     "colors": [
       "black",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -9734,7 +9734,7 @@
     "colors": [
       "black",
       "pink",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -9779,7 +9779,7 @@
       "blue",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -9823,7 +9823,7 @@
     ],
     "colors": [
       "black",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -9870,7 +9870,7 @@
     "colors": [
       "red",
       "black",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -9930,7 +9930,7 @@
     "colors": [
       "red",
       "pink",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -9954,7 +9954,7 @@
       "red",
       "black",
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -9977,7 +9977,7 @@
       "blue",
       "red",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -10042,7 +10042,7 @@
     ],
     "colors": [
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -10064,7 +10064,7 @@
     "colors": [
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -10084,7 +10084,7 @@
       "red",
       "black",
       "pink",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -10207,7 +10207,7 @@
       "red",
       "black",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -10248,7 +10248,7 @@
     "colors": [
       "red",
       "pink",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -10291,7 +10291,7 @@
       "red",
       "black",
       "pink",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -10361,7 +10361,7 @@
       "red",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -10429,7 +10429,7 @@
       "red",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -10450,7 +10450,7 @@
       "red",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -10497,7 +10497,7 @@
       "blue",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -10519,7 +10519,7 @@
     "colors": [
       "blue",
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -10545,7 +10545,7 @@
     "colors": [
       "red",
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -10589,7 +10589,7 @@
       "red",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -10614,7 +10614,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -10636,7 +10636,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -10656,7 +10656,7 @@
       "blue",
       "pink",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -10696,7 +10696,7 @@
       "blue",
       "black",
       "pink",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -10717,7 +10717,7 @@
     "colors": [
       "red",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -10741,7 +10741,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -10783,7 +10783,7 @@
     ],
     "colors": [
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -10805,7 +10805,7 @@
     "colors": [
       "black",
       "pink",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -10870,7 +10870,7 @@
       "blue",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -10892,7 +10892,7 @@
     ],
     "colors": [
       "red",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -10939,7 +10939,7 @@
     ],
     "colors": [
       "black",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -10963,7 +10963,7 @@
       "black",
       "pink",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -11049,7 +11049,7 @@
     "colors": [
       "red",
       "pink",
-      "magenta"
+      "brown"
     ]
   },
   {
@@ -11180,7 +11180,7 @@
     "colors": [
       "red",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -11203,7 +11203,7 @@
       "red",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -11227,7 +11227,7 @@
     "colors": [
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -11248,7 +11248,7 @@
     ],
     "colors": [
       "pink",
-      "magenta",
+      "brown",
       "purple"
     ]
   },
@@ -11348,7 +11348,7 @@
     "colors": [
       "blue",
       "black",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -11371,7 +11371,7 @@
     "colors": [
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]
@@ -11397,7 +11397,7 @@
       "red",
       "black",
       "yellow",
-      "magenta",
+      "brown",
       "green"
     ]
   },
@@ -11417,7 +11417,7 @@
       "UK8"
     ],
     "colors": [
-      "magenta",
+      "brown",
       "green",
       "purple"
     ]

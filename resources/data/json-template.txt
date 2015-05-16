@@ -34,7 +34,7 @@
     },
     
      colors: function() {
-      var colorArray = ["blue", "red", "black", "pink", "yellow", "magenta", "green", "purple"];
+      var colorArray = ["blue", "red", "black", "pink", "yellow", "brown", "green", "purple"];
       var array = [];
       for (var i = 0; i < 8; i++) {
         if (Math.round(Math.random()) === 1) {
@@ -42,7 +42,7 @@
         }
       }
       if (array.length < 1) {
-        array = ["blue", "red", "black", "pink", "yellow", "magenta", "green", "purple"];
+        array = ["blue", "red", "black", "pink", "yellow", "brown", "green", "purple"];
       }
       return array;
     }

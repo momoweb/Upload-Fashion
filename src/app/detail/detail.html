@@ -11,6 +11,19 @@
             <h5>{{vm.item.name}}</h5>
             <h4>{{vm.item.price | currency:"£"}}</h4>
             <p>{{vm.item.description}}</p>
+            <div>
+                <h6>Available Colors:</h6>
+                <ul id="color-pallet">
+                    <li ng-repeat="color in vm.item.colors | orderBy: 'toString()'" class="color-sprite {{color}}" title="{{color}}">{{color}}</li>
+                </ul>
+            </div>
+            <div>
+                <h6>Available Sizes:</h6>
+                <!--<li ng-repeat="size in vm.item.sizes | orderBy: 'toString()'" class="sizes">{{size}}</li>-->
+                <select id="size-selection" class="form-control">
+                    <option ng-repeat="size in vm.item.sizes" value="{{size}}">{{size}}</option>
+                </select>
+            </div>
             <button class="btn btn-success btn-sm" ng-click="vm.addItem()">Add To Bag</button>
         </div>
     </div>

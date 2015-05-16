@@ -189,6 +189,7 @@ gulp.task('styles', ['clean-styles'], function() {
         .pipe($.sass())
         .pipe($.autoprefixer({browser: ['last 2 version', '> 5%']}))
         .pipe(gulp.dest(config.temp + '/css/'))
+        .pipe($.livereload());
 });
 
 gulp.task('templatecache', ['clean'],function() {

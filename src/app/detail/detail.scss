@@ -12,14 +12,65 @@
 
   #item-info {
     padding: 0 1.5em;
-    button {
+    p {
       margin-top: 2em;
+    }
+    button {
+      margin-top: 4em;
       border-radius: 0;
     }
   }
 
   .btn:focus {
     outline: none;
+  }
+
+  h6 {
+    margin-top: 1em;
+  }
+
+  #color-pallet {
+    list-style-type: none;
+    padding-left: 0;
+    li {
+      display: inline-block;
+      margin-right: 3px;
+    }
+
+    .color-sprite {
+      height: 21px;
+      width: 24px;
+      text-indent: -200em;
+      background-image: url('../images/clothingcolorsprite.png');
+    }
+    .black {
+      background-position: 0px 0px;
+    }
+    .blue {
+      background-position: -1100px 0px;
+    }
+    .brown {
+      background-position: -300px 0px;
+    }
+    .green {
+      background-position: -1000px 0px;
+    }
+    .purple {
+      background-position: -1200px 0px;
+    }
+    .pink {
+      background-position: -600px 0px;
+    }
+    .red {
+      background-position: -500px 0px;
+    }
+    .yellow {
+      background-position: -900px 0px;
+    }
+  }
+  
+  select {
+    width: 80px;
   }
 }
 
