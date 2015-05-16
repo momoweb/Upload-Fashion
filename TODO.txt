@@ -5,3 +5,6 @@ add ngCloak to reduce browser flickering
 replace Selection element in sidebar, atm it's different on FF and IE.
 add available color in detail
 add available sizes in detail
+refactor #/1 links to a 'home' state
+check <label> syntax with view-source:http://javascriptbook.com/code/c06/form.html
+cache busting (reason: browser might cache a app.js that is newer or older than current version)
