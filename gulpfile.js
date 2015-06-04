@@ -147,37 +147,6 @@ gulp.task('scripts', ['vet'], function() {
 });
 
 /**
- * Build and serve the dev version
- */
-gulp.task('serve', ['build'], $.serve({
-    port: 8888,
-    root: ['.tmp', 'resources', BOWER_COMPONENTS_FOLDER]
-}));
-
-/**
- * Build and serve the dist version
- */
-gulp.task('serve-dist', $.serve({
-    port: 7777,
-    root: ['./build/']
-}));
-
-/**
- * Serve and watch for changes
- */
-gulp.task('serve-dev', ['serve'], function() {
-    $.livereload.listen();
-    //watch index.html
-    gulp.watch([config.index], ['wiredep']);
-    //watch all other html
-    gulp.watch([config.allhtml, '!' + config.index], ['html']);
-    //watch all javascript files
-    gulp.watch(['src/**/*.js'], ['scripts', 'vet']);
-    // watch Sass
-    gulp.watch(['src/**/*.scss'], ['styles']);
-});
-
-/**
  * compile Sass to CSS
  * @return {stream}
  */
@@ -186,8 +155,10 @@ gulp.task('styles', ['clean-styles'], function() {
     return gulp
         .src(config.sass)
         .pipe($.plumber())
+        .pipe($.sourcemaps.init())
         .pipe($.sass())
         .pipe($.autoprefixer({browser: ['last 2 version', '> 5%']}))
+        .pipe($.sourcemaps.write('./maps'))
         .pipe(gulp.dest(config.temp + '/css/'))
         .pipe($.livereload());
 });
@@ -238,6 +209,7 @@ gulp.task('wiredep', function() {
 });
 
 ////////////////////////////////////////////////////////////
+// Helper functions
 
 /**
  * Remove all files from the temp folders
@@ -264,19 +236,36 @@ function log(msg) {
     }
 }
 
+////////////////////////////////////////////////////////////
+// Main tasks
 
+/**
+ * Build and serve the dev version
+ */
+gulp.task('serve', ['build'], $.serve({
+    port: 8888,
+    root: ['.tmp', 'resources', BOWER_COMPONENTS_FOLDER]
+}));
 
-gulp.task('t', function () {
+/**
+ * Build and serve the dist version
+ */
+gulp.task('serve-dist', $.serve({
+    port: 7777,
+    root: ['./build/']
+}));
+
+/**
+ * Serve and watch for changes
+ */
+gulp.task('serve-dev', ['serve'], function() {
     $.livereload.listen();
-    gulp.watch(['src/**/*.scss'], ['styles2']);
-});
-
-gulp.task('styles2', ['clean-styles'], function(done) {
-    return gulp
-        .src(config.sass)
-        .pipe($.plumber(), done)
-        .pipe($.sass())
-        .pipe($.autoprefixer({browser: ['last 2 version', '> 5%']}))
-        //.pipe(gulp.dest(dirs.src + '/styles'))
-        .pipe($.livereload());
+    //watch index.html
+    gulp.watch([config.index], ['wiredep']);
+    //watch all other html
+    gulp.watch([config.allhtml, '!' + config.index], ['html']);
+    //watch all javascript files
+    gulp.watch(['src/**/*.js'], ['scripts', 'vet']);
+    // watch Sass
+    gulp.watch(['src/**/*.scss'], ['styles']);
 });
