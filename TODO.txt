@@ -1,6 +1,8 @@
 // TODO
 keyboard shortcut = cmd + 6
 
+redo logo svg in illustrator
+
 add ngCloak to reduce browser flickering
 replace Selection element in sidebar, atm it's different on FF and IE.
 refactor #/1 links to a 'home' state
