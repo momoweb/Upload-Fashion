@@ -25,11 +25,7 @@
                         }
                         oldWidth = newWidth;
                         //if window width is >= desktop
-                        if (newWidth >= 992) {
-                            scope.vm.isCollapsed = false;
-                        } else {
-                            scope.vm.isCollapsed = true;
-                        }
+                        scope.vm.isCollapsed = (newWidth < 992);
                     });
                 });
             }
