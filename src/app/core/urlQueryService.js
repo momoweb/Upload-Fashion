@@ -5,7 +5,7 @@
         .factory('UrlQueryService', UrlQueryService);
 
     /* @ngInject */
-    function UrlQueryService($location) {
+    function UrlQueryService($location, $state) {
 
         var service = {
             removeQuery: removeQuery,
@@ -28,7 +28,7 @@
             if (pos > -1) {
                 query[key].splice(pos, 1);
                 $location.search(key, query[key]);
-                $location.path('/1');
+                //$location.path('/1');
             }
         }
 
@@ -36,7 +36,7 @@
             var query = $location.search();
             if (!(key in query)) {
                 $location.search(key, [value]);
-                $location.path('/1');
+                //$location.path('/1');
             } else {
                 var valueArray = query[key];
                 // see removeQuery on why we need to use [].concat
@@ -44,14 +44,13 @@
 
                 valueArray.push(value);
                 $location.search(key, valueArray);
-                $location.path('/1');
+                //$location.path('/1');
             }
         }
 
         function addPriceFilter(min, max) {
             $location.search('min', min);
             $location.search('max', max);
-            $location.path('/1');
         }
     }
 
