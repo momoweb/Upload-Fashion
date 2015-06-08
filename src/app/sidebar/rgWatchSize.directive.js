@@ -24,7 +24,7 @@
                             return;
                         }
                         oldWidth = newWidth;
-                        //if window width is >= desktop
+                        //if window width is less than desktop
                         scope.vm.isCollapsed = (newWidth < 992);
                     });
                 });
