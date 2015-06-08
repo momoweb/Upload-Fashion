@@ -2,11 +2,17 @@
 
 #content-gallery {
   padding-top: 2em;
-  h5 {
+  p {
     text-align: center;
   }
-  h4 {
-    text-align: center;
+  .gallery-item-name {
+    padding-top: 1em;
+    font-size: 1.125em;
+  }
+  .gallery-item-price {
+    font-weight: 500;
+    font-size: 1.5em;
+    color: $price-orange;
   }
   .gallery-item {
     margin-bottom: 3em;

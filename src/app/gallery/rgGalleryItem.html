@@ -2,8 +2,8 @@
     <a ui-sref="detail({ itemUid: vm.item.uid })">
         <img ng-src="images/sm/{{vm.item.image_sm_url}}" alt={{item.name}}>
     </a>
-    <h5>{{vm.item.name}}</h5>
-    <h4>{{vm.item.price | currency:"£"}}</h4>
+    <p class="gallery-item-name">{{vm.item.name}}</p>
+    <p class="gallery-item-price">{{vm.item.price | currency:"£"}}</p>
     <!-- <pre>{{vm.item.sizes | json}}</pre> -->
     <!-- <pre>{{vm.item.colors | json}}</pre> -->
 </div>
