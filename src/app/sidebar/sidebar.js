@@ -99,11 +99,7 @@
 
         function initCollapsed() {
             // if window width is < desktop
-            if ($window.innerWidth < 992) {
-                vm.isCollapsed = true;
-            } else {
-                vm.isCollapsed = false;
-            }
+            vm.isCollapsed = ($window.innerWidth < 992);
         }
 
         function clicked(category, option) {
@@ -115,8 +111,7 @@
         }
 
         function formatText(string) {
-            var str = string.replace(/_/g, ' ');
-            return str;
+            return string.replace(/_/g, ' ');
         }
 
         function setPriceRange() {
