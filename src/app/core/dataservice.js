@@ -71,16 +71,12 @@
         function getPageItems(pageNum) {
             var start = (pageNum - 1) * itemsPerPage;
             var end = pageNum * itemsPerPage;
-            // if page 1, start index is 0
-            if (pageNum === 1) {
-                start = 0;
-            }
 
             return database.slice(start, end);
         }
 
         function loadData() {
-            return $http.get('data/database.json');
+            return (database || $http.get('data/database.json'));
         }
 
         // sort database using currentSortOrder
