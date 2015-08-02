@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="upload">
+
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8">
+    <base href="/">
+
+    <!-- build:css css/app.css -->
+    <link rel="stylesheet" href="lib/jquery-ui/themes/smoothness/jquery-ui.min.css"/>
+    <link rel="stylesheet" type="text/css" href=".tmp/styles.css">
+    <!-- endbuild -->
+
+    <title>Upload Fashion</title>
+</head>
+
+<body>
+<header class="container">
+    <a href="#/1"><img src="images/logo.svg" alt="upload fashion" id="logo-main"></a>
+    <p>
+        <em>- built with Angularjs and Bootstrap-sass</em>
+    </p>
+</header>
+<article ui-view="main"></article>
+<footer class="text-center">
+    Photo attribution: <a href="https://www.flickr.com/photos/lit_foto/sets/72157626572664692">Pete Lytwyniuk / Studiolit</a>
+</footer>
+
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.1/ui-bootstrap-tpls.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-cookies.min.js"></script>
+
+<!-- build:js js/lib.js -->
+<!-- bower:js -->
+<!-- endbower -->
+<!-- 3rd party scripts -->
+<script src="lib/ui-slider.js"></script>
+<!-- endbuild -->
+<!-- build:js js/app.js -->
+<!-- inject:js -->
+<script src="/src/client/app/app.js"></script>
+<script src="/src/client/app/app.states.js"></script>
+<script src="/src/client/app/core/constants.js"></script>
+<script src="/src/client/app/core/dataservice.js"></script>
+<script src="/src/client/app/core/inArrayFilter.js"></script>
+<script src="/src/client/app/core/rangeFilter.js"></script>
+<script src="/src/client/app/core/shoppingCartService.js"></script>
+<script src="/src/client/app/core/urlQueryService.js"></script>
+<script src="/src/client/app/detail/detail.js"></script>
+<script src="/src/client/app/gallery/gallery.js"></script>
+<script src="/src/client/app/gallery/rgGalleryItem.directive.js"></script>
+<script src="/src/client/app/shell/galleryShell.js"></script>
+<script src="/src/client/app/shoppingCart/rgShoppingCart.directive.js"></script>
+<script src="/src/client/app/shoppingCart/shoppingCart.js"></script>
+<script src="/src/client/app/sidebar/rgWatchSize.directive.js"></script>
+<script src="/src/client/app/sidebar/sidebar.js"></script>
+<!-- endinject -->
+<!-- inject:templates:js -->
+<!-- endinject -->
+<!-- endbuild -->
+</body>
+
+</html>

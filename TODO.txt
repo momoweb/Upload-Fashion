@@ -1,8 +1,1 @@
-// TODO
-keyboard shortcut = cmd + 6
-
-redo logo svg in illustrator
-
-add ngCloak to reduce flash of contents
-replace Selection element in sidebar, atm it's different on FF and IE.
-cache busting (reason: browser might cache a app.js that is newer or older than current version)
+save new logo.svg with font as outline so it shows up correctly on os without the font

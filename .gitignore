@@ -27,6 +27,7 @@ journal
 
 # Ignore Web Storm #
 .idea
+.idea/*.*
 
 # Compiled source #
 ###################
@@ -71,4 +72,10 @@ packages
 # dev builds #
 ######################
 .tmp/
+dist/
+_client_ori/
+playground/
+tools/getDest/data/
+TODO.txt
+design/
 build/
