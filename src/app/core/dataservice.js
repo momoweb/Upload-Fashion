@@ -76,7 +76,7 @@
         }
 
         function loadData() {
-            return (database || $http.get('data/database.json'));
+            return ($http.get('data/database.json'));
         }
 
         // sort database using currentSortOrder
