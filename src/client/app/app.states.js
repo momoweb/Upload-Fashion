@@ -55,7 +55,7 @@
                 }
             })
             .state('thankyou', {
-                url: '/thankyou',
+                url: '/thankyou/',
                 views: {
                     'main': {
                         templateUrl: 'app/thankyou/thankyou.html'
