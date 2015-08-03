@@ -335,6 +335,24 @@ gulp.task('autotest', function(done) {
 });
 
 /**
+ * Copy json data file
+ */
+gulp.task('copy:json', function(done) {
+    return gulp
+        .src(config.jsonData)
+        .pipe(gulp.dest(config.build + '/data'));
+});
+
+/**
+ * Copy json data file
+ */
+gulp.task('copy:libFiles', function(done) {
+    return gulp
+        .src('./src/client/lib/**/*.*')
+        .pipe(gulp.dest(config.build + '/lib'));
+});
+
+/**
  * serve the dev environment
  * --debug-brk or --debug
  * --nosync
@@ -348,7 +366,7 @@ gulp.task('serve-dev', ['inject'], function() {
  * --debug-brk or --debug
  * --nosync
  */
-gulp.task('serve-build', ['build'], function() {
+gulp.task('serve-build', ['build', 'copy:json', 'copy:libFiles'], function() {
     serve(false /*isDev*/);
 });
 
