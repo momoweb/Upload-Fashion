@@ -17,6 +17,7 @@
         vm.clicked = clicked;
         vm.formatText = formatText;
         vm.setPriceRange = setPriceRange;
+        vm.isTouch = isTouch;
         vm.priceRange = {
             step: 10,
             minMax: [_priceRangeMin, _priceRangeMax],
@@ -130,6 +131,10 @@
             if (vm.priceRangeForm.$valid) {
                 UrlQueryService.addPriceFilter(min, max);
             }
+        }
+
+        function isTouch() {
+            return Modernizr.touch;
         }
     }
 })();

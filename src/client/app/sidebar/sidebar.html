@@ -25,10 +25,10 @@
             </accordion-group>
         </accordion>
         <h5>Price Range: <span class="current-price-range">£{{vm.priceRange.minMax[0]}} - £{{vm.priceRange.minMax[1]}}</span></h5>
-        <div class="hidden-xs hidden-sm">
+        <div ng-hide="vm.isTouch()">
             <div ui-slider="vm.priceRange.options" min="0" max="300" step="{{vm.priceRange.step}}" use-decimals ng-model="vm.priceRange.minMax"></div>
         </div>
-        <form name="vm.priceRangeForm" class="hidden-md hidden-lg row">
+        <form name="vm.priceRangeForm" ng-show="vm.isTouch()" class="row">
             <label for="minPrice">min: £</label>
             <input name="min" type="number" min="0" max="290" id="minPrice" ng-model="vm.priceRange.minMax[0]">
             <label for="maxPrice">max: £</label>
