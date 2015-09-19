@@ -1,2 +1,1 @@
-save new logo.svg with font as outline so it shows up correctly on os without the font
 replace ui-slider with rzslider, when done remove copy lib task
