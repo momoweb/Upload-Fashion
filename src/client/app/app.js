@@ -4,7 +4,8 @@
         'ui.router',
         'ui.bootstrap',
         'ui.slider',
-        'ngCookies'
+        'ngCookies',
+        'ngAnimate'
     ]);
 
 }());
